@@ -1,0 +1,13 @@
+#!/bin/csh
+#$ -M demo@gmail.com     # Email address for job notification
+#$ -m a          # Send mail when job begins, ends and aborts
+#$ -pe smp 4      # environment and legal core size
+#$ -q long       # Specify queue (should always be long)
+#$ -N PowerSimulation   # Specify job name
+#$ -t 1:160 # This must come from the number of conditions you have       
+#$ -o errorFiles/PowerSimulationtest.$TASK_ID.out
+#$ -e errorFiles/PowerSimulation.$TASK_ID.err
+
+module load R
+
+Rscript PowerSimulation.R
