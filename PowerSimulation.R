@@ -3,7 +3,7 @@ library(parallel)
 i <- as.numeric(Sys.getenv("SGE_TASK_ID")) ### Get the task ID
 nCores <- as.numeric(Sys.getenv("NSLOTS")) ### Get the number of alloted cores
 
-print(nCores)
+print(nCores*2)
 
 if(is.na(i)) i <- 1 # for testing
 if(is.na(nCores)) i <- 4 # for testing
