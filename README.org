@@ -14,10 +14,26 @@ Official stance of Notre Dame on Linux Users:
 
 [[file:./img/draper.gif]]
 
+However, in practice, using the CRC as a Linux user is in fact easier than all other platforms, if only because you are already used to the command line. 
+
 *** Getting familiar with the command line
 **** Transfering files to and from the crc
 You can use the command scp to send files to the crc
 
+
+How to transfer a single file:
+#+NAME: Transfering a single file
+#+BEGIN_SRC bash
+  scp ~/PATH/TO/FILE/file.txt user@fontendmachine.crc.nd.edu:~/PATH/TO/DIR/
+#+END_SRC
+
+How to transfer a folder:
+#+NAME: Transfering a folder
+#+BEGIN_SRC bash
+  scp -r ~/PATH/TO/DIR user@fontendmachine.crc.nd.edu:~/PATH/TO/DIR/
+#+END_SRC
+
+In both instances you will be prompted for your password.
 
 *** Useful bash aliases
 *** ssh hints and tricks
