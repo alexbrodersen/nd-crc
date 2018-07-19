@@ -4,7 +4,7 @@ This wiki is organized using the [[https://www.youtube.com/watch?v=hYip_Vuv8J0][
 The crc utilizes [[https://en.wikipedia.org/wiki/Univa_Grid_Engine][Univa Grid Engine]] as it's batch queing system, and this wiki is a dedicated resource to learning how to operate within that environment.
 
 
-[[child][child]]
+[[#child][child]]
 [[teen][teen]]
 college student
 grad student
