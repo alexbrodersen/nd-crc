@@ -1,0 +1,14 @@
+* Notre Dame CRC Wiki
+
+This wiki is organized using the [[https://www.youtube.com/watch?v=hYip_Vuv8J0][5 levels]] of increasing complexity.
+
+a child, a teen, a college student, a grad student, and an expert. 
+
+** Available software
+** Setting up your environment
+*** Getting familiar with the command line
+*** Useful bash aliases
+*** ssh hints and tricks
+** Ques
+*** debug (short) Que
+*** long que
