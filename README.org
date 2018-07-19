@@ -7,9 +7,13 @@ The crc utilizes [[https://en.wikipedia.org/wiki/Univa_Grid_Engine][Univa Grid E
 ** Setting up your environment
 *** Window
 I feel sorry for you.
-[[file:./img/draper.gif]]
 *** Mac
 *** Linux
+Official stance of Notre Dame on Linux Users:
+
+
+[[file:./img/draper.gif]]
+
 *** Getting familiar with the command line
 **** Transfering files to and from the crc
 You can use the command scp to send files to the crc
