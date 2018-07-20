@@ -3,7 +3,9 @@
 This wiki is organized using [[https://www.youtube.com/watch?v=hYip_Vuv8J0][2 levels]] of increasing complexity. This page details the need to know. The [[file:./ADVANCED.org][advanced]] wiki has a much more in-depth discussion of what is required. The purpose of this wiki is to explain to users specifically in [[https://psychology.nd.edu/graduate-programs/areas-of-study/quantitative/][Quant Psych]] how they can use the CRC to further their research using distributed and parallel computing. The programming language of choice will be [[https://www.r-project.org/][R]], but the techniques described within are expected to be broadly applicable across technologies.
 The crc utilizes [[https://en.wikipedia.org/wiki/Univa_Grid_Engine][Univa Grid Engine]] as it's batch queing system, and this wiki is a dedicated resource to learning how to operate within that environment.
 
-** Available software
+And of course, there is a [[file:./911.org][HELP! I have one day to make this work!]]
+
+
 ** Setting up your environment
 *** Window
 I feel sorry for you.
@@ -34,10 +36,30 @@ How to transfer a folder:
 #+END_SRC
 
 In both instances you will be prompted for your password.
-
+*** Editing files on the CRC
+**** nano (User Friendly)
+**** emacs (Very Powerful)
+**** vim (The Devil)
 *** Useful bash aliases
 *** ssh hints and tricks
 ** Ques
 *** debug (short) Que
 *** long que
+
+** Using multiple softwares
+*** GNU Parallel
+
+** interactive jobs
+
+*** Starting an interactive session: 
+
+#+NAME: Interactive Sessions
+#+BEGIN_SRC bash
+  qrsh -smp pe 8 -now n -N JOBNAME
+#+END_SRC
+
+*** screen
+
+Screen is a handy tool installed on linux that allows your sessions to persist in the event that your internet connection disconnects. If you were using an interactive job, this would normally make you lose all progress you have made thus far. However, with screen, you can resume this easily. 
+
 
