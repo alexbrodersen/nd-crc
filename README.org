@@ -37,14 +37,34 @@ How to transfer a folder:
 
 In both instances you will be prompted for your password.
 *** Editing files on the CRC
+
+Eventually, you will have to edit a file on the crc. This means using a terminal editor of some sort. There are three common editors people use to edit files on linux servers.
+
 **** nano (User Friendly)
+Nano is by far the most simple and easy to use editor. 
+
+Tutorial [[https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/][here]] 
 **** emacs (Very Powerful)
+Emacs is an editor with a very long history. 
+
 **** vim (The Devil)
 *** Useful bash aliases
 *** ssh hints and tricks
 ** Ques
 *** debug (short) Que
 *** long que
+*** Open Cores
+On the long Que
+#+NAME: Free Cores long
+#+BEGIN_SRC bash
+free_nodes.sh @crc_d12chas
+#+END_SRC
+
+On the debug Que
+#+NAME: Free Cores Short
+#+BEGIN_SRC bash
+free_nodes.sh @debug_d12chas
+#+END_SRC
 
 ** Using multiple softwares
 *** GNU Parallel
@@ -63,3 +83,35 @@ In both instances you will be prompted for your password.
 Screen is a handy tool installed on linux that allows your sessions to persist in the event that your internet connection disconnects. If you were using an interactive job, this would normally make you lose all progress you have made thus far. However, with screen, you can resume this easily. 
 
 
+** for loops
+
+Writing a for loop in bash is super handy. 
+*** Example
+
+Say you ran a simulation with 20 thousand conditions and because you failed to do proper error handling, you now suddenly have a list of task ids that need to be re-run.
+
+The =-t= flag in a submit script cannot handle not integer sequences of task ids.
+
+Solution: Write a bash script with a for loop to loop through the task ids you need to repeat.
+
+First, write a bash script, such as follows:
+
+#+NAME: bash-for-loop.sh
+#+BEGIN_SRC bash
+for i in 15 27 36 98 752 # ids you need to replicate
+do
+    qsub -t $i submit.job
+    done
+#+END_SRC
+
+Then, make it executable:
+
+#+BEGIN_SRC bash
+chmod +x bash-for-loop.sh
+#+END_SRC
+
+Then, run it:
+
+#+BEGIN_SRC bash
+./bash-for-loop.sh
+#+END_SRC
