@@ -115,3 +115,27 @@ Then, run it:
 #+BEGIN_SRC bash
 ./bash-for-loop.sh
 #+END_SRC
+
+*** Ids stored in a file
+
+Let's say the list is too long for the ids to be placed manually into the bash script. Instead, you can store the ids in a file and pass that as an argument to the for loop.
+
+#+NAME: bash-for-loop.sh
+#+BEGIN_SRC bash
+for i in $(cat $1)
+do
+    qsub -t $i submit.job
+done
+#+END_SRC
+
+Then, make it executable:
+
+#+BEGIN_SRC bash
+chmod +x bash-for-loop-args.sh
+#+END_SRC
+
+Then, run it with the argument ids.txt:
+
+#+BEGIN_SRC bash
+./bash-for-loop-args.sh ids.txt
+#+END_SRC
