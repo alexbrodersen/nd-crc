@@ -101,7 +101,7 @@ First, write a bash script, such as follows:
 for i in 15 27 36 98 752 # ids you need to replicate
 do
     qsub -t $i submit.job
-    done
+done
 #+END_SRC
 
 Then, make it executable:
