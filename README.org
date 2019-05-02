@@ -21,7 +21,7 @@ However, in practice, using the CRC as a Linux user is in fact easier than all o
 
 *** Getting familiar with the command line
 **** Transfering files to and from the crc
-You can use the command scp to send files to the crc
+You can use the command scp ([[https://en.wikipedia.org/wiki/Secure_copy][secure copy protocol]]) to send files to the crc
 
 
 How to transfer a single file:
