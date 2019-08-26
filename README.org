@@ -51,17 +51,17 @@ Emacs is an editor with a very long history.
 **** vim (The Devil)
 *** Useful bash aliases
 *** ssh hints and tricks
-** Ques
-*** debug (short) Que
-*** long que
+** Queues
+*** debug (short) Queue
+*** long queue
 *** Open Cores
-On the long Que
+On the long Queue
 #+NAME: Free Cores long
 #+BEGIN_SRC bash
 free_nodes.sh @crc_d12chas
 #+END_SRC
 
-On the debug Que
+On the debug Queue
 #+NAME: Free Cores Short
 #+BEGIN_SRC bash
 free_nodes.sh @debug_d12chas
