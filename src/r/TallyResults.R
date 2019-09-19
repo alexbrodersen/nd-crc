@@ -1,16 +1,28 @@
-setwd("~/Documents/CRCexample/results/") ### Set the working directory to the results folder
+setwd("../res/") ### Set the working directory to the results folder
+
+library(tidyverse)
 
 res <- lapply(list.files(), function(x){
     read.table(x,header = T)
 })
 
-res <- do.call(rbind,res)
-rownames(res) <- 1:dim(res)[1] ### Just because
+do.call(rbind,res) %>%
+  data.frame() %>%
+  as_tibble() -> res
 
-pValueAgg <- aggregate(res[,"p.value"],by = list(N = res[,"N"],d = res[,"d"],sigma = res[,"sigma"]), FUN = mean)
+res %>%
+  select(-rep) %>% 
+  group_by(N, sigma, alph, d) %>%
+  summarize_all(list(mean = mean, var = var)) -> res_summary
 
-tStatisticAgg <- aggregate(res[,"statistic"],by = list(N = res[,"N"],d = res[,"d"],sigma = res[,"sigma"]), FUN = mean) 
+res_summary %>%
+  ggplot(aes(x = N, y = decision_mean, shape = as.factor(d), linetype = as.factor(sigma))) +
+  geom_point() +
+  geom_line() +
+  theme_bw()
 
-decisionAgg  <- aggregate(res[,"decision"],by = list(N = res[,"N"],d = res[,"d"],sigma = res[,"sigma"]), FUN = mean) 
-
-
+res_summary %>%
+  ggplot(aes(x = N, y = statistic_mean, shape = as.factor(d), linetype = as.factor(sigma))) +
+  geom_point() +
+  geom_line() +
+  theme_bw()
