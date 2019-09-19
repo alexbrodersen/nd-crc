@@ -54,6 +54,7 @@ An alias is a shortcut on the command like that you can use run common tasks muc
 
 Add the following to your .cshrc file and see what they do!
 
+#+BEGIN_SRC bash
 #Additional aliases
 alias ls 'ls --color=auto'
 alias ll 'ls -l'
@@ -65,6 +66,8 @@ alias qqt 'qstat | grep --color -E "abroders|*"'
 alias scr 'cd /scratch365/abroders/'
 alias lastrun 'qstat | grep -E "r\s+[0-9]+\/[0-9]+\/[0-9]+.+long" --color=auto | tail -n 1'
 alias cf 'ls -1 | wc -l'
+#+END_SRC
+
 
 *** ssh hints and tricks
 ** Queues
