@@ -49,7 +49,23 @@ Tutorial [[https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the
 Emacs is an editor with a very long history. 
 
 **** vim (The Devil)
-*** Useful bash aliases
+*** Useful aliases
+An alias is a shortcut on the command like that you can use run common tasks much more quickly.
+
+Add the following to your .cshrc file and see what they do!
+
+#Additional aliases
+alias ls 'ls --color=auto'
+alias ll 'ls -l'
+alias llh 'du -h | sort -n'
+alias qwjobs 'qstat -u abroders | grep qw | wc -l'
+alias qrjobs 'qstat -u abroders | grep "abroders" | grep "r" | wc -l'
+alias qst 'qstat -u abroders'
+alias qqt 'qstat | grep --color -E "abroders|*"'
+alias scr 'cd /scratch365/abroders/'
+alias lastrun 'qstat | grep -E "r\s+[0-9]+\/[0-9]+\/[0-9]+.+long" --color=auto | tail -n 1'
+alias cf 'ls -1 | wc -l'
+
 *** ssh hints and tricks
 ** Queues
 *** debug (short) Queue
